@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="post-head">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <div class="post-meta">{{ page.date | date: "%a, %d %b %Y" }} · {{ page.author | default: site.author }}</div>
+  </header>
+  <section class="post-body">
+    {{ content }}
+  </section>
+</article>
+<section class="comments-wrap">
+  {% if page.comments %}{% include comments.html %}{% endif %}
+</section>

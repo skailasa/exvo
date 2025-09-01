@@ -1,0 +1,19 @@
+name: EX/VO
+url: https://your-username.github.io/your-repo
+baseurl: ""
+title: "EX/VO Blog"
+description: "Surf the cyberweb"
+permalink: "/:year/:month/:day/:title/"
+markdown: kramdown
+theme: null
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+author: "The Dictator"
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: true

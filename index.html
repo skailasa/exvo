@@ -1,0 +1,40 @@
+---
+layout: default
+title: Features
+---
+<section class="hero">
+  <div class="hero-left">
+    <h1>Welcome To <span>EX/VO</span></h1>
+    <p class="pitch">XD XD XOXO </p>
+    <div class="hit-counter">
+      <span>Website Hit Counter:</span>
+<img src="https://hitwebcounter.com/counter/counter.php?page=21436439&style=0001&nbdigits=5&type=page&initCount=0" title="Hit counter and PDF Converters" Alt="hit counter and PDF Convertors"   border="0" /></a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="marquee"><span>Prepare for the Holiday Extravaganza! • Blogs • Guestbooks </span></div>
+    <div class="stickers">
+      <img src="assets/gifs/Praise_the_Lord98.gif" alt="Sticker" />
+      <img src="assets/gifs/WELCOMERAINBOW.gif" alt="Sticker" />
+      <!-- <img src="https://via.placeholder.com/120x90?text=CGI" alt="Sticker" /> -->
+    </div>
+  </div>
+</section>
+
+<section class="split">
+  <div>
+    <h3>Latest Blog Posts</h3>
+    <ul class="postlist">
+      {% for post in site.posts limit:5 %}
+      <li>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <small>{{ post.date | date: "%d %b %Y" }}</small>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div>
+    <h3>GuestBook</h3>
+    <p><a class="btn" href="{{ '/guestbook.html' | relative_url }}">Sign Guestbook »</a></p>
+  </div>
+</section>
