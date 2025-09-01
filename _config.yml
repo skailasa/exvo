@@ -1,6 +1,6 @@
 name: EX/VO
-url: https://your-username.github.io/your-repo
-baseurl: ""
+url: https://skailasa.github.io/
+baseurl: "exvo"
 title: "EX/VO Blog"
 description: "Surf the cyberweb"
 permalink: "/:year/:month/:day/:title/"
