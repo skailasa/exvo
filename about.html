@@ -1,0 +1,11 @@
+---
+layout: default
+title: Manifesto
+permalink: /about.html
+---
+
+<h2>MANIFESTO</h2>
+{% capture md %}
+{% include_relative _posts/manifesto.md %}
+{% endcapture %}
+{{ md | markdownify }}

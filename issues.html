@@ -1,0 +1,51 @@
+---
+layout: default
+title: Past Issues
+permalink: /issues.html
+---
+
+<h1>{{ page.title }}</h1>
+
+<label for="pdfSelect">Choose an Issue:</label>
+<select id="pdfSelect" style="margin-left:.5rem;">
+  <option value="">— Select —</option>
+  {% assign pdfs = site.static_files
+    | where_exp: "f", "f.path contains '/assets/issues/'"
+    | where_exp: "f", "f.extname == '.pdf'"
+    | sort: "name" %}
+  {% for f in pdfs %}
+    <option value="{{ f.path | relative_url }}">{{ f.name }}</option>
+  {% endfor %}
+</select>
+
+<div id="viewer" style="margin-top:1rem;">
+  <object id="pdfObject" type="application/pdf" width="100%" height="720" style="display:none;border:1px solid #ddd; border-radius:8px;"></object>
+</div>
+
+<script>
+  const select = document.getElementById('pdfSelect');
+  const obj = document.getElementById('pdfObject');
+
+  function loadFromQuery() {
+    const u = new URL(window.location);
+    const file = u.searchParams.get('file');
+    if (file) {
+      // Basic guard: only allow files under /assets/pdfs/
+      if (file.startsWith('/assets/pdfs/') && file.endsWith('.pdf')) {
+        obj.data = file + '#toolbar=1&navpanes=0&scrollbar=1';
+        obj.style.display = 'block';
+      }
+    }
+  }
+
+  select.addEventListener('change', () => {
+    if (!select.value) { obj.style.display = 'none'; return; }
+    obj.data = select.value + '#toolbar=1&navpanes=0&scrollbar=1';
+    obj.style.display = 'block';
+    const u = new URL(window.location);
+    u.searchParams.set('file', select.value);
+    history.replaceState(null, '', u);
+  });
+
+  loadFromQuery();
+</script>

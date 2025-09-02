@@ -4,12 +4,15 @@ layout: default
 <article class="post">
   <header class="post-head">
     <h1 class="post-title">{{ page.title }}</h1>
-    <div class="post-meta">{{ page.date | date: "%a, %d %b %Y" }} · {{ page.author | default: site.author }}</div>
+    <div class="post-meta">
+      Posted {{ page.date | date: "%a, %d %b %Y" }} ·
+      {% assign author_slug = page.author | slugify %}
+      <a href="{{ '/author/' | append: author_slug | append: '/' | relative_url }}">
+        {{ page.author }}
+      </a>
+    </div>
   </header>
   <section class="post-body">
     {{ content }}
   </section>
 </article>
-<section class="comments-wrap">
-  {% if page.comments %}{% include comments.html %}{% endif %}
-</section>

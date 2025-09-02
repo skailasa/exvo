@@ -1,7 +1,7 @@
 name: EX/VO
-url: https://skailasa.github.io/
-baseurl: "exvo"
-title: "EX/VO Blog"
+# url: https://skailasa.github.io/
+# baseurl: "exvo"
+# title: "EX/VO Blog"
 description: "Surf the cyberweb"
 permalink: "/:year/:month/:day/:title/"
 markdown: kramdown
