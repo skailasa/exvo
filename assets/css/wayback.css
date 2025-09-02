@@ -1,12 +1,13 @@
 /* ====== Fonts ====== */
 @font-face {
   font-family: "CaslonTitling";
-  src: url("{{ '/assets/fonts/caslon-titling.woff2' | relative_url }}") format("woff2"),
-       url("{{ '/assets/fonts/caslon-titling.woff'  | relative_url }}") format("woff");
+  src: url("../fonts/caslon-titling.woff2") format("woff2"),
+       url("../fonts/caslon-titling.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
+
 /* ====== Base / Background ====== */
 html, body { height: 100%; margin: 0; }
 body{
@@ -14,11 +15,29 @@ body{
     #c0c0c0
     url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAE0lEQVR4nGNgQAAbDAYDNlkMCQAevADxoK8l9wAAAABJRU5ErkJggg==')
     repeat;
-  /* Default font stack: your Caslon, then open-source/readable Caslon, then system serifs */
-  font-family: "CaslonTitling", "Libre Caslon Text", Georgia, "Times New Roman", serif;
+  /* Body uses a text serif, not Titling */
+  font-family: "Libre Caslon Text", Georgia, "Times New Roman", serif;
   line-height: 1.55;
   color:#111;
 }
+
+/* Headings + logo use Caslon Titling */
+h1, h2, h3, h4, h5, h6,
+.post-title,
+.logo {
+  font-family: "CaslonTitling", Georgia, "Times New Roman", serif;
+  letter-spacing: 0.5px;
+}
+
+
+/* Container frame */
+.frame{
+  max-width:980px; margin:16px auto; background:#fff;
+  border:3px ridge #c0c0c0;
+  box-shadow:0 0 0 4px #fff, 0 0 0 8px #c0c0c0;
+  font-family: inherit; /* inherit from body */
+}
+
 
 /* Container frame */
 .frame{
@@ -36,7 +55,7 @@ body{
   border-bottom:2px groove #c0c0c0;
 }
 .logo{
-  font-family:'Impact', Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family:'CaslonTitling', Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size:28px; letter-spacing:1px;
 }
 .logo span{ font-size:14px; vertical-align:super; }

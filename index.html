@@ -36,4 +36,18 @@ title: Features
     <h3>GuestBook</h3>
     <p><a class="btn" href="{{ '/guestbook.html' | relative_url }}">Sign GuestBook »</a></p>
   </div>
+
+  <div>
+    <h3>Announcements</h3>
+    <ul class="postlist">
+      {% assign anns = site.announcements | sort: "date" | reverse %}
+      {% for a in anns limit:5 %}
+      <li>
+        <a href="{{ a.url | relative_url }}">{{ a.title }}</a>
+        <small>{{ a.date | date: "%d %b %Y" }}</small>
+      </li>
+      {% endfor %}
+    </ul>
+    <p><a class="btn" href="{{ '/announcements/' | relative_url }}">All announcements »</a></p>
+  </div>
 </section>

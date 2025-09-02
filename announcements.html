@@ -1,0 +1,14 @@
+---
+layout: default
+title: Announcements
+permalink: /announcements/
+---
+<h2>Announcements</h2>
+<ul class="postlist">
+  {% assign anns = site.announcements | sort: "date" | reverse %}
+  {% for a in anns %}
+    <li><a href="{{ a.url | relative_url }}">{{ a.title }}</a>
+      <small> — {{ a.date | date: "%d %b %Y" }}</small>
+    </li>
+  {% endfor %}
+</ul>
