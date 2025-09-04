@@ -1,7 +1,7 @@
 name: EX/VO
 title: "EX/VO"                 # optional but many plugins expect 'title'
-# url: "https://exhibitionismvoyeurism.github.io/"
-# baseurl: "/exvo"
+url: "https://exhibitionismvoyeurism.github.io"
+baseurl: ""
 description: "Surf the cyberweb"
 
 permalink: "/:year/:month/:day/:title/"
