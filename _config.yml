@@ -1,12 +1,16 @@
+# _config.yml
 name: EX/VO
-title: "EX/VO"                 # optional but many plugins expect 'title'
-url: "https://exhibitionismvoyeurism.github.io"
-baseurl: "exvo"
+title: "EX/VO"
 description: "Surf the cyberweb"
+
+url: "https://www.exhibitionismvoyeurism.com"
+
+baseurl: ""
 
 permalink: "/:year/:month/:day/:title/"
 markdown: kramdown
 theme: null
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
@@ -29,5 +33,5 @@ defaults:
       path: ""
       type: announcements
     values:
-      layout: post         # or make a custom 'announcement' layout
+      layout: post
       comments: false
